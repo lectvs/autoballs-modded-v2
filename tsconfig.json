@@ -1,0 +1,19 @@
+{
+    "include": ["./def/**/*", "./lectvs/**/*", "./src/**/*"],
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "dom",
+            "es2015",
+            "scripthost"
+        ],
+        "module": "amd",
+        "sourceMap": false,
+        "strict": false,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "types": [],
+        "outFile": "bin/js/game.js",
+        "downlevelIteration": true
+    }
+}

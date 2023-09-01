@@ -1,1 +1,3 @@
-# autoballs-modded-v2
+# Auto Balls Modded v2
+
+## Setup
