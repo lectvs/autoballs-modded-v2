@@ -29,6 +29,9 @@ In order to run the game in browser, you will need to start up a web server. Thi
 	- If using Mongoose, you can copy the .exe into the root folder and then run it.
 2. Visit `http://localhost:[PORT]/bin/` in your web browser, where PORT is the port you started your web server with.
 
+### Build V1 Mod
+Run the script `node build_v1_mod.js` to create a ZIP file you can send to others. They can upload the ZIP using the client at https://autoballs.lectvs.net/modded/ and play your mod!
+
 ## Can I use your code/assets in my game?
 Sure! You can use any of my code from the `lectvs` or `src` folders, and any **ART** assets. Unfortunately, as I don't own all of the sound assets used in this game, I don't have the authority to let you use them. If you make a game using my stuff, do let me know on Twitter (@lectvs), as I would love to play it! :)
 
