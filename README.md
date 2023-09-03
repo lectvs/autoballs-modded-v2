@@ -33,6 +33,6 @@ In order to run the game in browser, you will need to start up a web server. Thi
 Run the script `node build_v1_mod.js` to create a ZIP file you can send to others. They can upload the ZIP using the client at https://autoballs.lectvs.net/modded/ and play your mod!
 
 ## Can I use your code/assets in my game?
-Sure! You can use any of my code from the `lectvs` or `src` folders, and any **ART** assets. Unfortunately, as I don't own all of the sound assets used in this game, I don't have the authority to let you use them. If you make a game using my stuff, do let me know on Twitter (@lectvs), as I would love to play it! :)
+Sure! You can use any of my code from the `lectvs` or `src` folders, and any **ART** assets. Unfortunately, as I don't own all of the sound assets used in this game, I don't have the authority to let you use them in your own game. If you make a game using my stuff, do let me know on Twitter (@lectvs), as I would love to play it! :)
 
 Source code is provided under the MIT License, while **ART** assets are provided under CC0-1.0. For more information, see LICENSE files in each of `lectvs`, `src`, and `bin/assets` folders.
