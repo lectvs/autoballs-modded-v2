@@ -736,16 +736,21 @@ namespace RoundResults {
         updateAchievementProgress('WinFiftyRounds', p => p+1);
 
         if (ENEMY_SQUAD_DATA) {
+            let enemyName = ENEMY_SQUAD_DATA.squad.name.trim();
             if (ENEMY_SQUAD_DATA.gameResult === 'win') {
                 updateAchievementProgress('DefeatCrownedSquads', p => p+1);
             }
 
-            if (ENEMY_SQUAD_DATA.squad.name.trim() === 'lectvs') {
+            if (enemyName === 'lectvs') {
                 updateAchievementProgress('DefeatLectvs', p => p+1);
             }
 
-            if (ENEMY_SQUAD_DATA.squad.name.trim() === 'Materwelons') {
+            if (enemyName === 'Materwelons') {
                 updateAchievementProgress('DefeatMaterwelons', p => p+1);
+            }
+
+            if (enemyName === 'Xephia' || enemyName === 'Mobile Xephia') {
+                updateAchievementProgress('DefeatXephia', p => p+1);
             }
         }
 

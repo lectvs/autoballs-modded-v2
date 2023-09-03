@@ -293,6 +293,25 @@ const ACHIEVEMENTS = {
         completeProgress: 1,
         secret: true,
     }),
+    'DefeatXephia': requireType<Achievement>({
+        description: 'Defeat Xephia in Matchmaking',
+        rewardIconBase: 'achievements/defeatxephia',
+        rewardObjectFactory: () => {
+            let r = getRewardSprite('achievements/defeatxephia/1', 'The Shuffle Scuffle Versus\nMode tournament winner!');
+            let g = new Effects.Filters.Glitch(0, 1, 2);
+            r.effects.post.filters.push(g);
+            r.updateCallback = function() {
+                if (M.sin(240*this.life.time) > 0.93) {
+                    g.strength = 4;
+                } else {
+                    g.strength = 0;
+                }
+            }
+            return r;
+        },
+        completeProgress: 1,
+        secret: true,
+    }),
     'Useless': requireType<Achievement>({
         description: 'Useless! >:(',
         rewardIconBase: 'achievements/useless',

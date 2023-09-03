@@ -608,6 +608,10 @@ namespace Assets {
             anchor: Vector2.CENTER,
             spritesheet: { frameWidth: 32, frameHeight: 32 },
         },
+        'achievements/defeatxephia': {
+            anchor: Vector2.CENTER,
+            spritesheet: { frameWidth: 32, frameHeight: 32 },
+        },
         'achievements/useless': {
             anchor: Vector2.CENTER,
             spritesheet: { frameWidth: 24, frameHeight: 24 },

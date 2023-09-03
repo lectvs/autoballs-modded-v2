@@ -1,5 +1,7 @@
 const PATCH_NOTES_INT = [`
-- Patch 9/?? -
+- Patch 9/3 -
+
+Congrats to [pg]Xephia[/] for winning the Auto Balls Shuffle Scuffle tournament!
 
 Balance
 + Ball of Ice: now costs [dgold]1<star>[/] to use
