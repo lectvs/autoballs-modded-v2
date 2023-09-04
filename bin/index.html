@@ -10,9 +10,10 @@
         <script src="js/game.js"></script>
         <script>
             var IS_MOBILE = false;
-            var IS_MODDED = false;
+            var IS_MODDED = true;
             window.onload = function () {
                 Main.start();
+                unlockAllAchievements(); restoreCompleteAlmanac(); saveSeenAlmanacComplete(true);
                 window.focus();
             };
             window.onclick = function () {
