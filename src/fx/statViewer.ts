@@ -27,16 +27,20 @@ class StatViewer extends SpriteText {
     postUpdate(): void {
         super.postUpdate();
 
-        let battleSpeedController = global.theater?.select?.type(BattleSpeedController, false);
-
-        if (battleSpeedController && (battleSpeedController.paused || battleSpeedController.endOfGame)) {
+        if (this.shouldShow()) {
             this.setVisible(true);
             this.setText(StatViewer.getText(this.statType));
             World.Actions.moveWorldObjectToFront(this);
         } else {
             this.setVisible(false);
         }
+    }
 
+    private shouldShow() {
+        if (getBattleState(this.world) === Ball.States.PREP) return false;
+        let battleSpeedController = global.theater?.select?.type(BattleSpeedController, false);
+        if (!battleSpeedController) return false;
+        return battleSpeedController.paused || battleSpeedController.endOfGame;
     }
 }
 

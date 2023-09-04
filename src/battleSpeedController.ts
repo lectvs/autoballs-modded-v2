@@ -41,6 +41,7 @@ class BattleSpeedController extends WorldObject {
         this.speed = 1;
         this.producedTimescale = 1;
         this.enabled = false;
+        this.endOfGame = false;
     }
 
     private canControl(world: World) {

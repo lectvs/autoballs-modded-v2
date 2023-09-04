@@ -14,7 +14,7 @@ Minor Changes
 + You can now see damage/health
   values of certain objects (e.g
   medpacks, mines, buffs, bullets,
-  etc.) while paused
+  etc.) while paused.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`,
 `

@@ -1464,8 +1464,10 @@ class Ball extends Sprite {
     }
 
     stop(time: number) {
-        this.addSlow('other', 0.8, time);
+        let slowFactor = 0.8;
+        this.addSlow('other', slowFactor, time);
         this.addScaleAcceleration(this, 0, time);
+        this.v.clampMagnitude(Ball.maxSpeedBase * (1-slowFactor));
     }
 
     private updateBallScaleInternal() {

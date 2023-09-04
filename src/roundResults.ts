@@ -78,6 +78,9 @@ namespace RoundResults {
         let battleTimer = global.world.select.type(BattleTimer);
         if (battleTimer && battleTimer.battleTime > 60) return true;
 
+        let delayResolveObjects = getDelayResolveObjects(global.world);
+        if (existsOngoingDelayResolveObjects(undefined, delayResolveObjects, [])) return false;
+
         let balls = global.world.select.typeAll(Ball);
         if (balls.length === 0) return true;
         if (balls.every(ball => ball.team === 'friend' || ball.team === 'neutral')) return true;
@@ -108,6 +111,17 @@ namespace RoundResults {
             ongoing = true;
         }
 
+        if (battleTimer && battleTimer.battleTime > 60) {
+            ongoing = false;
+            isTimeout = true;
+        } else if (existsOngoingDelayResolveObjects(winningTeam, delayResolveObjects, lastDelayResolveObjects)) {
+            ongoing = true;
+        }
+
+        return { result, ongoing, isTimeout };
+    }
+
+    function existsOngoingDelayResolveObjects(winningTeam: Ball.Team, delayResolveObjects: WorldObject[], lastDelayResolveObjects: WorldObject[]) {
         let existsLosingTeamDelayResolveObjects = winningTeam && [...delayResolveObjects, ...lastDelayResolveObjects].some(dro => {
             let droTeam = getDelayResolveObjectTeam(dro);
             return droTeam !== winningTeam && droTeam !== 'neutral';
@@ -117,14 +131,7 @@ namespace RoundResults {
             return dro.hasTag(Tags.FORCE_DELAY_RESOLVE);
         });
 
-        if (battleTimer && battleTimer.battleTime > 60) {
-            ongoing = false;
-            isTimeout = true;
-        } else if (existsLosingTeamDelayResolveObjects || existsForceDelayResolveObjects) {
-            ongoing = true;
-        }
-
-        return { result, ongoing, isTimeout };
+        return existsLosingTeamDelayResolveObjects || existsForceDelayResolveObjects;
     }
 
     function playCutsceneForRoundResult(roundResult: 'win' | 'loss' | 'draw', isTimeout: boolean) {
