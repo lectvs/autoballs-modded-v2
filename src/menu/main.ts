@@ -15,6 +15,7 @@ class MainMenu extends Menu {
 
         Main.fixedDelta = undefined;
         GAME_MODE = 'mm';
+        global.theater?.select?.type(BattleSpeedController, false)?.reset();
 
         setArenaWorld(Arenas.ARENA_FIRST);
         this.addWorldObject(new Theater.WorldAsWorldObject(_MENUS_ARENA_WORLD));

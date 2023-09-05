@@ -756,7 +756,7 @@ namespace RoundResults {
                 updateAchievementProgress('DefeatMaterwelons', p => p+1);
             }
 
-            if (enemyName === 'Xephia' || enemyName === 'Mobile Xephia') {
+            if (enemyName === 'Xephia' || enemyName === 'Mobile Xephia' || enemyName === 'App Xephia') {
                 updateAchievementProgress('DefeatXephia', p => p+1);
             }
         }
