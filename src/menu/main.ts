@@ -1,7 +1,7 @@
 var DONE_YAY = false;
 
 class MainMenu extends Menu {
-    constructor() {
+    constructor(initialLoad?: 'initialLoad') {
         super({
             backgroundColor: 0x000000,
             volume: 1,
@@ -58,7 +58,7 @@ class MainMenu extends Menu {
             this.select.name<Sprite>('title').setTexture(this.select.name<Sprite>('title_bday').getTexture());
             this.select.name<Sprite>('title').effects.post.filters.push(new HueSpinFilter());
             this.addWorldObject(new BdayShower());
-            if (!DONE_YAY) {
+            if (!DONE_YAY && !initialLoad) {
                 global.game.playSound('yay').volume = 0.5;
                 global.game.playSound('achievement').volume = 0.6;
                 DONE_YAY = true;

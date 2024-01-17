@@ -31,7 +31,7 @@ class LoadMenu extends Menu {
             logo.effects.post.filters[0].enabled = false;
 
             async(() => {
-                let mm = new MainMenu();
+                let mm = new MainMenu('initialLoad');
                 _MENUS_ARENA_WORLD.allowSounds = false;
                 global.game.musicManager.stopMusic();
                 mm.update();
