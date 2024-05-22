@@ -110,6 +110,7 @@ function mergeAutoBallsDatas(data: AutoBallsData, into: AutoBallsData) {
     into.seenAlmanacComplete = into.seenAlmanacComplete || data.seenAlmanacComplete;
     into.classicWins = Math.max(into.classicWins || 0, data.classicWins || 0);
     into.communityWins = Math.max(into.communityWins || 0, data.communityWins || 0);
+    into.weeklyWins = Math.max(into.weeklyWins || 0, data.weeklyWins || 0);
     into.lastDailyCompleted = Math.max(into.lastDailyCompleted || 0, data.lastDailyCompleted || 0);
 
     into.matchmakingGameData = data.matchmakingGameData;
